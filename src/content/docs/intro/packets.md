@@ -76,7 +76,7 @@ title: 数据包一览
 - **S48PacketResourcePackSend**： 用于向客户端发送资源包 URL 供客户端下载。
 - **S49PacketUpdateEntityNBT**： 用于发送实体的更新 NBT 数据。
 
-## Outgoing Packets (Packets sent from the client to the server):
+## 发送包 (由客户端向服务端发送的数据包):
 - **C00PacketKeepAlive**： 客户端向服务器发送的心跳包，用于确认客户端仍然在线。
 - **C01PacketChatMessage**： 用于从客户端向服务器发送聊天信息。
 - **C02PacketUseEntity**： 用于与实体交互，如攻击实体或与实体交互。
