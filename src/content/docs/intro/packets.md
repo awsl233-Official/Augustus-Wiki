@@ -1,109 +1,109 @@
 ---
-title: Packets and their Uses
+title: 数据包一览
 ---
 
-## Incoming Packets (Packets sent from the server to the client):
-- **S00PacketKeepAlive**: Used by the server to check if the client is still responsive by sending periodic keep-alive packets.
-- **S02PacketChat**: Sends chat messages from the server to the client.
-- **S03PacketTimeUpdate**: Updates the time of day on the client to synchronize with the server.
-- **S04PacketEntityEquipment**: Updates equipment worn by an entity, such as armor or items in hand.
-- **S05PacketSpawnPosition**: Defines the position where players will spawn in the world.
-- **S06PacketUpdateHealth**: Updates the player's health, food level, and food saturation.
-- **S07PacketRespawn**: Forces the player to respawn after dying or being teleported to another dimension.
-- **S08PacketPlayerPosLook**: Updates the player’s position and look direction.
-- **S09PacketHeldItemChange**: Updates the slot in the hotbar that the player has selected.
-- **S0APacketUseBed**: Informs the client that a player is using a bed.
-- **S0BPacketAnimation**: Animates entities, like arm swings.
-- **S0CPacketSpawnPlayer**: Spawns another player entity into the game world.
-- **S0DPacketCollectItem**: Sent when an entity, usually a player, picks up an item.
-- **S0EPacketSpawnObject**: Spawns objects like arrows, boats, or minecarts in the world.
-- **S0FPacketSpawnMob**: Spawns a mob entity in the world.
-- **S10PacketSpawnPainting**: Spawns a painting entity in the game world.
-- **S11PacketSpawnExperienceOrb**: Spawns experience orbs in the world.
-- **S12PacketEntityVelocity**: Updates an entity's velocity.
-- **S13PacketDestroyEntities**: Informs the client to remove an entity from the world.
-- **S14PacketEntity**: Updates the position or rotation of an entity.
-- **S15PacketEntityRelMove**: Relative movement of an entity compared to its previous position.
-- **S16PacketEntityLook**: Changes only the look (head or body rotation) of an entity.
-- **S17PacketEntityLookMove**: Updates both the position and look of an entity.
-- **S18PacketEntityTeleport**: Teleports an entity to a specific location.
-- **S19PacketEntityHeadLook**: Rotates only the head of the entity.
-- **S1APacketEntityStatus**: Updates an entity’s status, such as being on fire or crouching.
-- **S1BPacketEntityAttach**: Attaches entities, like putting a player in a minecart.
-- **S1CPacketEntityMetadata**: Updates metadata (custom properties) for entities.
-- **S1DPacketEntityEffect**: Applies a status effect to an entity, like poison or speed.
-- **S1EPacketRemoveEntityEffect**: Removes a status effect from an entity.
-- **S20PacketEntityProperties**: Updates the properties of an entity, such as health, movement speed, or attack damage.
-- **S21PacketChunkData**: Sends a chunk of terrain data to the client.
-- **S22PacketMultiBlockChange**: Changes multiple blocks within a chunk at once.
-- **S23PacketBlockChange**: Updates a single block's state.
-- **S24PacketBlockAction**: Performs an action on a block, like opening a chest or a note block sound.
-- **S25PacketBlockBreakAnim**: Displays block-breaking animations.
-- **S26PacketMapChunkBulk**: Sends multiple chunks to the client at once.
-- **S27PacketExplosion**: Simulates an explosion by removing or damaging blocks.
-- **S28PacketEffect**: Sends an effect, such as a sound, like explosions or portal sounds.
-- **S29PacketSoundEffect**: Sends sound events to the client.
-- **S2APacketParticles**: Sends particle effects, like smoke or flames.
-- **S2BPacketChangeGameState**: Changes the game state, such as starting rain or clearing it.
-- **S2CPacketSpawnGlobalEntity**: Spawns a global entity, like a lightning bolt.
-- **S2DPacketOpenWindow**: Opens a window, such as a chest or crafting table interface.
-- **S2EPacketCloseWindow**: Closes the open window or GUI on the client side.
-- **S2FPacketSetSlot**: Updates the item in a specific inventory slot.
-- **S30PacketWindowItems**: Sends all items in an open window's inventory.
-- **S31PacketWindowProperty**: Updates a property of a window, like progress bars in brewing or furnace GUIs.
-- **S32PacketConfirmTransaction**: Confirms a transaction between the client and server.
-- **S33PacketUpdateSign**: Updates the text on a sign.
-- **S34PacketMaps**: Sends map data to the client.
-- **S35PacketUpdateTileEntity**: Updates data for a tile entity, such as a chest or furnace.
-- **S36PacketSignEditorOpen**: Opens the sign editor on the client to allow typing on a sign.
-- **S37PacketStatistics**: Sends statistics data, such as blocks broken or time played.
-- **S38PacketPlayerListItem**: Updates the player list (Tab menu) with player names, ping, and game mode.
-- **S39PacketPlayerAbilities**: Updates the player's abilities, such as whether they can fly or are in creative mode.
-- **S3APacketTabComplete**: Provides tab-completion options for commands.
-- **S3BPacketScoreboardObjective**: Manages scoreboard objectives.
-- **S3CPacketUpdateScore**: Updates the score for an objective.
-- **S3DPacketDisplayScoreboard**: Changes the scoreboard display.
-- **S3EPacketTeams**: Manages team data for the scoreboard.
-- **S3FPacketCustomPayload**: Sends custom plugin messages.
-- **S40PacketDisconnect**: Disconnects the player with a message.
-- **S41PacketServerDifficulty**: Updates the difficulty level of the server.
-- **S42PacketCombatEvent**: Sends combat events, such as entering or leaving combat.
-- **S43PacketCamera**: Changes the player's camera perspective, like when controlling an entity.
-- **S44PacketWorldBorder**: Updates the world border settings.
-- **S45PacketTitle**: Displays a title on the screen.
-- **S46PacketSetCompressionLevel**: Sets the compression threshold for packets.
-- **S47PacketPlayerListHeaderFooter**: Updates the header and footer of the player list.
-- **S48PacketResourcePackSend**: Sends a resource pack URL for the client to download.
-- **S49PacketUpdateEntityNBT**: Sends updated NBT data for an entity.
+## 接收包 (由服务端向客户端发送的数据包):
+- **S00PacketKeepAlive**: 服务器向客户端发送的心跳包。用于确认客户端是否仍然在线。
+- **S02PacketChat**: 用于服务器向客户端发送消息。
+- **S03PacketTimeUpdate**: 用于同步服务端和客户端之间的游戏时间。
+- **S04PacketEntityEquipment**: 用于更新实体的装备数据，比如玩家穿着的装备，物品栏中的武器/工具等。
+- **S05PacketSpawnPosition**: 用于定义玩家的出生点位置。
+- **S06PacketUpdateHealth**: 用于更新玩家的血量、饥饿值、饱和度数据。
+- **S07PacketRespawn**: 用于强制玩家在死亡后/传送维度时重生。
+- **S08PacketPlayerPosLook**: 用于更新玩家的位置/转头数据。
+- **S09PacketHeldItemChange**: 用于更新玩家当前手持物品。
+- **S0APacketUseBed**: 用于提醒客户端玩家使用了床。
+- **S0BPacketAnimation**： 用于实体播放动画，如摆动手臂，受伤等。
+- **S0CPacketSpawnPlayer**： 用于在世界中生成一个玩家实体。
+- **S0DPacketCollectItem**： 用于提示客户端玩家捡起了物品。
+- **S0EPacketSpawnObject**： 在世界中生成诸如箭矢，船只，鱼钩等物体。
+- **S0FPacketSpawnMob**： 在世界上生成一个敌对实体。
+- **S10PacketSpawnPainting**： 用于在世界中生成一个画实体。
+- **S11PacketSpawnExperienceOrb**： 用于在世界中生成经验球。
+- **S12PacketEntityVelocity**： 用于更新实体的速度。
+- **S13PacketDestroyEntities**： 用于通知客户端从世界中移除一个实体。
+- **S14PacketEntity**： 用于更新实体的位置和转头数据。
+- **S15PacketEntityRelMove**： 用于提示客户端该实体相对于先前位置发生了移动。
+- **S16PacketEntityLook**： 用于更新实体的头部旋转、身体旋转等数据。
+- **S17PacketEntityLookMove**： 在S16的基础上，同时更新了位置数据。。
+- **S18PacketEntityTeleport**： 用于将实体传送到特定位置。
+- **S19PacketEntityHeadLook**： 仅更新实体的头部数据。
+- **S1APacketEntityStatus**： 用于更新实体的状态，如着火或蹲下。
+- **S1BPacketEntityAttach**： 用于实体的骑乘动作，如玩家驾驶矿车。
+- **S1CPacketEntityMetadata**： 用于更新实体的NBT数据。
+- **S1DPacketEntityEffect**： 用于对实体施加药水效果，如中毒或速度。
+- **S1EPacketRemoveEntityEffect**: 用于移除实体的药水效果.
+- **S20PacketEntityProperties**： 用于更新实体的属性，如健康、移动速度或攻击伤害。
+- **S21PacketChunkData**： 用于向客户端发送区块数据。
+- **S22PacketMultiBlockChange**： 用于修改一个区块内的多个方块。
+- **S23PacketBlockChange**： 用于更新单个方块的状态。
+- **S24PacketBlockAction**： 用于方块交互，如打开箱子或使用音符盒。
+- **S25PacketBlockBreakAnim**： 用于显示破坏方块动画。
+- **S26PacketMapChunkBulk**： 用于一次向客户端发送多个区块数据。
+- **S27PacketExplosion**： 通过移除或破坏方块来模拟爆炸。
+- **S28PacketEffect**： 发送爆炸或传送门声音等效果。
+- **S29PacketSoundEffect**： 向客户端发送声音事件。
+- **S2APacketParticles**： 发送粒子效果，如烟雾或火焰。
+- **S2BPacketChangeGameState**： 改变游戏状态，如开始下雨或清除雨水。
+- **S2CPacketSpawnGlobalEntity**： 生成一个全局实体，如闪电。
+- **S2DPacketOpenWindow**： 打开一个窗口，如箱子或制作台界面。
+- **S2EPacketCloseWindow**： 关闭客户端打开的窗口或图形用户界面。
+- **S2FPacketSetSlot**： 更新特定库存槽中的物品。
+- **S30PacketWindowItems**： 发送打开窗口库存中的所有物品。
+- **S31PacketWindowProperty**： 更新窗口的属性，如酿造或熔炉图形用户界面中的进度条。
+- **S32PacketConfirmTransaction**: 用于确认一次数据包传输的进行。
+- **S33PacketUpdateSign**: 用于更新告示牌上的文字。
+- **S34PacketMaps**: 用于向客户端发送地图数据。
+- **S35PacketUpdateTileEntity**: 用于更新方块实体的数据，如箱子或熔炉。
+- **S36PacketSignEditorOpen**: 用于打开客户端的告示牌编辑界面。
+- **S37PacketStatistics**: 用于向客户端发送统计数据。
+- **S38PacketPlayerListItem**: 用于更新tab栏中的玩家。
+- **S39PacketPlayerAbilities**: 用于更新玩家的状态属性，如是否可以飞行，是否处于创造模式等。
+- **S3APacketTabComplete**: 用于向客户端更新tab补全的数据。
+- **S3BPacketScoreboardObjective**: 用于更新计分栏的内容。
+- **S3CPacketUpdateScore**: 用于更新计分板各项内容的分数。
+- **S3DPacketDisplayScoreboard**: 用于控制计分板是否显示。
+- **S3EPacketTeams**： 用于管理计分板的队伍数据。
+- **S3FPacketCustomPayload**： 用于向客户端发送自定义的数据信息。
+- **S40PacketDisconnect**： 用于强制断开玩家的连接。
+- **S41PacketServerDifficulty**： 用于更新服务器的难度。
+- **S42PacketCombatEvent**： 用于控制战斗事件，如进入或离开战斗。
+- **S43PacketCamera**： 用于改变玩家的摄像机视角，如作为观察者附身别人。
+- **S44PacketWorldBorder**： 用于更新世界边界设置。
+- **S45PacketTitle**： 用于在屏幕上显示标题。
+- **S46PacketSetCompressionLevel**： 用于设置数据包的压缩阈值。
+- **S47PacketPlayerListHeaderFooter**： 用于更新玩家列表的页眉和页脚内容。
+- **S48PacketResourcePackSend**： 用于向客户端发送资源包 URL 供客户端下载。
+- **S49PacketUpdateEntityNBT**： 用于发送实体的更新 NBT 数据。
 
 ## Outgoing Packets (Packets sent from the client to the server):
-- **C00PacketKeepAlive**: Sent by the client to keep the connection alive.
-- **C01PacketChatMessage**: Sends a chat message from the client to the server.
-- **C02PacketUseEntity**: Interacts with an entity, such as attacking or interacting with it.
-- **C03PacketPlayer**: General player movement packet.
-- **C04PacketPlayerPosition**: Sends the player’s position to the server.
-- **C05PacketPlayerLook**: Sends the player's view direction (yaw and pitch).
-- **C06PacketPlayerPosLook**: Sends both the position and look direction.
-- **C07PacketPlayerDigging**: Sent when the player starts or finishes digging a block.
-- **C08PacketPlayerBlockPlacement**: Sent when the player places a block in the world.
-- **C09PacketHeldItemChange**: Notifies the server that the player has changed the selected hotbar slot.
-- **C0APacketAnimation**: Sends animations, like arm swings.
-- **C0BPacketEntityAction**: Sends entity actions, like crouching or sprinting.
-- **C0CPacketClickWindow**: Used for inventory management; sends when an item is clicked in an inventory window.
-- **C0DPacketCloseWindow**: Closes the inventory window.
-- **C0EPacketClickWindow**: Confirms an item transaction in the inventory.
-- **C11PacketEnchantItem**: Used when enchanting an item.
-- **C12PacketUpdateSign**: Updates the text of a sign.
-- **C13PacketPlayerAbilities**: Sends player ability changes, such as allowing flight or invulnerability.
-- **C14PacketTabComplete**: Requests tab-completion options from the server.
-- **C15PacketClientSettings**: Sends the player's client settings, like language, chat visibility, and render distance.
-- **C16PacketClientStatus**: Updates the client status, like requesting statistics or respawning.
-- **C17PacketCustomPayload**: Sends custom plugin messages.
-- **C18PacketSpectate**: Sent when the player starts spectating another entity.
-- **C19PacketResourcePackStatus**: Sent when the player accepts or declines a resource pack.
-- **CAnimateHandPacket**: Simulates the player's hand animation, such as swinging or using an item.
+- **C00PacketKeepAlive**： 客户端向服务器发送的心跳包，用于确认客户端仍然在线。
+- **C01PacketChatMessage**： 用于从客户端向服务器发送聊天信息。
+- **C02PacketUseEntity**： 用于与实体交互，如攻击实体或与实体交互。
+- **C03PacketPlayer**：基础的玩家数据包。
+- **C04PacketPlayerPosition**： 用于向服务器发送玩家的位置数据。
+- **C05PacketPlayerLook**： 用于发送玩家的转头数据（yaw & pitch）。
+- **C06PacketPlayerPosLook**： 同时发送位置和转头数据。
+- **C07PacketPlayerDigging**： 当玩家开始或完成挖掘方块时发送。
+- **C08PacketPlayerBlockPlacement**： 当玩家在世界中放置方块时发送。
+- **C09PacketHeldItemChange**： 向服务器通知修改了手中物品。
+- **C0APacketAnimation**： 向服务器通知播放了动画。
+- **C0BPacketEntityAction**： 发送实体动作，如蹲下或疾跑。
+- **C0CPacketClickWindow**： 用于点击物品栏。当点击物品栏中的物品时发送。
+- **C0DPacketCloseWindow**： 关闭物品栏。
+- **C0EPacketClickWindow**： 确认物品栏的物品被点击。
+- **C11PacketEnchantItem**： 物品附魔时发送。
+- **C12PacketUpdateSign**： 更新告示牌文本。
+- **C13PacketPlayerAbilities**： 发送玩家状态数据，如允许飞行或开启创造模式。
+- **C14PacketTabComplete**： 请求服务器提供Tab补全数据。
+- **C15PacketClientSettings**： 发送玩家的客户端设置，如语言、聊天可见性和渲染距离。
+- **C16PacketClientStatus**： 更新客户端状态，如请求统计数据或复活。
+- **C17PacketCustomPayload**： 发送自定义数据信息。
+- **C18PacketSpectate**： 当玩家开始观战另一个实体时发送。
+- **C19PacketResourcePackStatus**： 当玩家接受或拒绝资源包时发送。
+- **CAnimateHandPacket**： 模拟高版本玩家的挥手动画。
 
-These packet types represent a variety of actions and data exchanged between the client and server in Minecraft, from movement and combat to world interaction and game state
+这些数据包代表了 Minecraft 中客户端和服务器之间交换的各种操作和数据，包括移动、战斗、世界交互和游戏状态等。
 
 ## EntityActionsToCancel:
 These are actions associated with an entity's behavior, particularly the player, and they likely correspond to player actions that can be canceled.
